@@ -17,11 +17,16 @@
             Hello, <%= @current_user.name %>
             |
             <%= link_to 'Logout', login_path, method: 'delete' %>
+            <br>
+            <%= link_to 'Home', root_path %>
+            |
+            <%= link_to 'Create new post', new_post_path %>
           <% else %>
             <%= link_to 'Login', login_path %>
             |
             <%= link_to 'Sign up', new_user_path %>
           <% end %>
+          | <%= link_to 'View all posts', posts_path %>
         </nav>
         <hr>
 
