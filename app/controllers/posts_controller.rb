@@ -7,9 +7,11 @@ class PostsController < ApplicationController
   end # new
 
   def create
+    # raise 'hell'
     @post = Post.new post_params
     @post.user_id = @current_user.id
     @post.save
+    Photo.create image: params[:photo_image], title: params[:photo_title], post_id: @post.id
     redirect_to posts_path
   end # create
 
@@ -38,6 +40,8 @@ class PostsController < ApplicationController
   end # update
 
   def destroy
+    @post = Post.destroy params[:id]
+    redirect_to posts_path
   end # destroy
 
   private
