@@ -1,3 +1,21 @@
 <h2>Edit post: <%= @post.title %></h2>
 
-<%= render partial: 'form' %>
+<%= form_for @post, html: {multipart: true} do |f| %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <br>
+
+  <%= f.label :caption %>
+  <%= f.text_field :caption %>
+  <br>
+
+  <% @post.photos.each do |photo| %>
+    <input type="checkbox" name="photo_id[]" value="<%= photo.id %>" checked>
+    <%= photo.title %>
+    <br>
+  <% end %>
+
+  <%= f.submit %>
+
+<% end %>

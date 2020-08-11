@@ -11,7 +11,10 @@ class PostsController < ApplicationController
     @post = Post.new post_params
     @post.user_id = @current_user.id
     @post.save
-    Photo.create image: params[:photo_image], title: params[:photo_title], post_id: @post.id
+    if params[:file].present?
+      response = Cloudinary::Uploader.upload params[:file]
+      Photo.create image: response['public_id'], title: params[:photo_title], post_id: @post.id
+    end
     redirect_to posts_path
   end # create
 

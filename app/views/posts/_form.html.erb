@@ -1,4 +1,5 @@
-<%= form_for @post do |f| %>
+
+<%= form_for @post, html: {multipart: true} do |f| %>
 
   <%= f.label :title %>
   <%= f.text_field :title %>
@@ -9,7 +10,7 @@
   <br>
 
   <%= label_tag :photo_image %>
-  <%= text_field_tag :photo_image %>
+  <%= cl_image_upload_tag :photo_image %>
   <br>
 
   <%= label_tag :photo_title %>
