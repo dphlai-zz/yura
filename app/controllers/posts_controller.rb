@@ -16,11 +16,12 @@ class PostsController < ApplicationController
       response = Cloudinary::Uploader.upload params[:file]
       Photo.create image: response['public_id'], title: params[:photo_title], post_id: @post.id
     end
-    redirect_to posts_path
+    redirect_to post_path(@post.id)
   end # create
 
   def index
     @posts = Post.all.order :title
+    redirect_to hikes_path
   end # index
 
   def show
@@ -29,14 +30,13 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find params[:id]
-    redirect_to posts_path unless @post.user == @current_user
+    redirect_to hikes_path unless @post.user == @current_user
   end # edit
 
   def update
-    raise
     post = Post.find params[:id]
     if post.user != @current_user
-      redirect_to posts_path
+      redirect_to hikes_path
       return
     end
 
@@ -46,7 +46,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.destroy params[:id]
-    redirect_to posts_path
+    redirect_to hikes_path
   end # destroy
 
   private

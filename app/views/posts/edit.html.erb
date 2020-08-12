@@ -2,20 +2,21 @@
 
 <%= form_for @post, html: {multipart: true} do |f| %>
 
-  <%= f.label :title %>
+  <%= f.label :title, 'Post title:' %><br>
   <%= f.text_field :title %>
   <br>
 
-  <%= f.label :caption %>
+  <%= f.label :caption, 'Post caption:' %><br>
   <%= f.text_field :caption %>
   <br>
+  <br>
 
-  <% @post.photos.each do |photo| %>
+  <!--  <% @post.photos.each do |photo| %>
     <input type="checkbox" name="photo_id[]" value="<%= photo.id %>" checked>
     <%= photo.title %>
     <br>
-  <% end %>
+  <% end %> -->
 
-  <%= f.submit %>
+  <%= f.submit "Finish editing" %>
 
 <% end %>

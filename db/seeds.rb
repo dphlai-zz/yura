@@ -1,4 +1,4 @@
-puts "Creating posts"
+puts "Creating posts..."
 Post.destroy_all
 
 p1 = Post.create! title: 'Lane Cove National Park', caption: 'I really liked hiking here.'
@@ -9,7 +9,7 @@ puts "Created #{Post.count} post(s)."
 
 # ------------------------------------------------------------------------------
 
-puts "Creating users"
+puts "Creating users..."
 User.destroy_all
 
 u1 = User.create! name:'Danny', email: 'danny@ga.co', password: 'chicken'
@@ -26,7 +26,7 @@ puts User.first.posts.pluck(:title).join(', ')
 
 # ------------------------------------------------------------------------------
 
-puts "Creating hikes"
+puts "Creating hikes..."
 Hike.destroy_all
 
 h1 = Hike.create! name:'Wentworth Falls', description: 'This short but steep walk from Wentworth Falls picnic area is well worth the effort. Follow the level path past Jamison and Wentworth lookouts before descending around 200 steps to the cliff-edge Fletchers lookout. Marvel at the waterfall that gives Wentworth Falls its name, as it plunges 100m to the valley floor.'
@@ -43,5 +43,15 @@ h3.posts << p2
 
 # ------------------------------------------------------------------------------
 
-puts "Removing photos"
+puts "Loading photos..."
 Photo.destroy_all
+
+ph1 = Photo.create! title: 'Wentworth Falls', image: 'wentworthfalls_yfauvc'
+ph2 = Photo.create! title: 'Mandarin Duck', image: 'mandarinduck_gvzodd'
+ph3 = Photo.create! title: 'Angry Boi', image: 'quack_ude9yu'
+
+puts "Created #{Photo.count} photo(s)"
+
+p1.photos << ph1 << ph2
+p2.photos << ph2 << ph3 << ph1
+p3.photos << ph1

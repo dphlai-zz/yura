@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Project One</title>
+    <title>Yura</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -12,7 +12,7 @@
 
   <body>
 
-    <h1>Project One</h1>
+    <h1>Yura</h1>
       <nav>
         <% if @current_user.present? %>
           Hello, <%= @current_user.name %>
@@ -21,14 +21,14 @@
           <br>
           <br>
           <%= link_to 'Home', root_path %>
-          |
+          &#127807;
           <%= link_to 'Add new hike', new_hike_path %>
         <% else %>
           <%= link_to 'Login', login_path %>
-          |
+          &#127807;
           <%= link_to 'Sign up', new_user_path %>
         <% end %>
-          |
+          &#127807;
           <%= link_to 'View all hikes', hikes_path %>
       </nav>
 
