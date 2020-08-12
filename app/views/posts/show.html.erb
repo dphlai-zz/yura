@@ -2,7 +2,7 @@
 <p>posted by <%= @post.user.name %></p>
 
 <% @post.photos.each do |post| %>
-  <%= cl_image_tag post.image %>
+  <%= cl_image_tag(post.image, :width=>200, :height=>200, :crop=>"scale") %>
 <% end %>
 
 <p><em><%= @post.caption %></em></p>
