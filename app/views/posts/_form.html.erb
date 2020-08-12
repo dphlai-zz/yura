@@ -1,9 +1,6 @@
-
 <%= form_for @post, html: {multipart: true} do |f| %>
 
-  <%= label_tag :name, 'Hike:' %><br>
-  <%= text_field_tag :name %>
-  <br>
+  <%= f.hidden_field :hike_id, value: @hike.id %>
 
   <%= f.label :title, 'Post title:' %><br>
   <%= f.text_field :title %>
@@ -22,6 +19,6 @@
   <br>
   <br>
 
-  <%= f.submit %>
+  <%= f.submit "Upload post" %>
 
 <% end %>

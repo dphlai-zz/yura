@@ -14,18 +14,38 @@ class HikesController < ApplicationController
   end
 
   def index
+    @hikes = Post.all.group_by(&:hike)
   end
 
   def show
+    @hike = Hike.find params[:id]
   end
 
   def edit
+    @hike = Hike.find params[:id]
+    redirect_to hikes_path unless @hike.user == @current_user
+  end
+
+  def update
+    hike = Hike.find params[:id]
+    if hike.user != @current_user
+      redirect_to hikes_path
+      return
+    end
+
+    hike.update hike_params
+    redirect_to hike_path(hike.id)
+  end # update
+
+  def destroy
+    @hike = Hike.destroy params[:id]
+    redirect_to hikes_path
   end
 
   private
 
   def hike_params
-    params.require(:hike).permit(:name, :title)
+    params.require(:hike).permit(:name, :description)
   end
 
 end

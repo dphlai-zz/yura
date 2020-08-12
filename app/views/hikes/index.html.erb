@@ -1,2 +1,11 @@
-<h1>Hikes#index</h1>
-<p>Find me in app/views/hikes/index.html.erb</p>
+<h2>All Hikes</h2>
+
+<% @hikes.each do |hike, posts| %>
+  <h3><%= link_to hike.name, hike_path(hike.id) %></h3>
+  <p><%= link_to 'Add post', new_post_path(hike_id: hike.id) %></p>
+  <ul>
+      <% posts.each do |post| %>
+      <li><%= link_to post.title, post_path(post.id) %></li>
+      <% end %>
+  </ul>
+<% end %>

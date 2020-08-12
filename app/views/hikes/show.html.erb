@@ -1,2 +1,18 @@
-<h1>Hikes#show</h1>
-<p>Find me in app/views/hikes/show.html.erb</p>
+<h2><%= @hike.name %></h2>
+
+<p><%= @hike.description %></p>
+
+<h3>Latest posts</h3>
+
+<ul>
+  <% @hike.posts.each do |post| %>
+  <li><%= link_to post.title, post_path(post.id) %></li>
+  <% end %>
+</ul>
+
+<% if @current_user.present? && @hike.user_id == @current_user.id %>
+  <br>
+  <%= link_to 'Edit hike', edit_hike_path(@hike) %>
+  |
+  <%= link_to 'Delete hike', hike_path(@hike), method: 'delete' %>
+<% end %>

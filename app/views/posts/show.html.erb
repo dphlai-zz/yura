@@ -2,7 +2,7 @@
 <p>posted by <%= @post.user.name %></p>
 
 <% @post.photos.each do |post| %>
-  <%= cl_image_tag(post.image, :width=>200, :height=>200, :crop=>"scale") %>
+  <%= cl_image_tag(post.image, :width=>250, :height=>250, :gravity=>"auto", :crop=>"fill") %>
 <% end %>
 
 <p><em><%= @post.caption %></em></p>
@@ -10,18 +10,21 @@
 <% if @current_user.present? && @post.user_id == @current_user.id %>
 
 <%= form_for Photo.new, html: {multipart: true} do |f| %>
-  <%= f.label :title %>
+  <%= f.label :title, 'Photo title:' %>
+  <br>
   <%= f.text_field :title %>
   <br>
-  <%= f.label :image %>
+
+  <%= f.label :image, 'Add new image:' %>
+  <br>
   <%= f.cl_image_upload :image %>
   <%= hidden_field_tag :post_id, @post.id %>
   <br>
+  <br>
 
-  <%= f.submit %>
+  <%= f.submit "Add photo to post" %>
 <% end %>
   <br>
-  |
   <%= link_to 'Edit post', edit_post_path(@post) %>
   |
   <%= link_to 'Delete post', post_path(@post), method: 'delete' %>

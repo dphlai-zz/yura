@@ -4,6 +4,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @hike = Hike.find params[:hike_id]
   end # new
 
   def create
@@ -32,6 +33,7 @@ class PostsController < ApplicationController
   end # edit
 
   def update
+    raise
     post = Post.find params[:id]
     if post.user != @current_user
       redirect_to posts_path
@@ -50,7 +52,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :caption)
+    params.require(:post).permit(:title, :caption, :hike_id)
   end
 
 end
