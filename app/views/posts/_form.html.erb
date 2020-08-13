@@ -3,15 +3,18 @@
   <%= f.hidden_field :hike_id, value: @hike.id %>
 
   <%= f.label :title, 'Post title:' %><br>
-  <%= f.text_field :title %>
+  <%= f.text_field :title, class: 'form-text-field' %>
+  <br>
   <br>
 
   <%= f.label :caption, 'Caption:' %><br>
-  <%= f.text_area :caption %>
+  <%= f.text_area :caption, class: 'form-text-area' %>
+  <br>
   <br>
 
   <%= label_tag :photo_image, 'Upload image:' %><br>
   <%= cl_image_upload_tag :photo_image %>
+  <br>
   <br>
 
   <%= label_tag :photo_title, 'Photo title:' %><br>
@@ -19,6 +22,6 @@
   <br>
   <br>
 
-  <%= f.submit "Upload post" %>
+  <%= f.submit "Upload post", class:"submit-button" %>
 
 <% end %>

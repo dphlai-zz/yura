@@ -19,6 +19,7 @@ class HikesController < ApplicationController
   end
 
   def show
+    # @hikes = Post.all.group_by(&:hike)
     @hike = Hike.find params[:id]
   end
 

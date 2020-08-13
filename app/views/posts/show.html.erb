@@ -8,7 +8,8 @@
 
 <div class="post-show-image">
   <% @post.photos.each do |post| %>
-  <%= cl_image_tag(post.image, :width=>250, :height=>250, :gravity=>"auto", :crop=>"fill", :quality=>90) %>
+    <%= cl_image_tag(post.image, :width=>500, :height=>500, :gravity=>"auto", :crop=>"fill", :quality=>95) %>
+    <br>
   <% end %>
 </div>
 
@@ -17,13 +18,17 @@
 </div>
 
 <% if @current_user.present? && @post.user_id == @current_user.id %>
-<hr>
+<hr class="gradient-line">
 
-<p>Add new photo to post:</p>
-<%= form_for Photo.new, html: {multipart: true} do |f| %>
+<div class="page-copy">
+  <p>Add new photo to post:</p>
+</div>
+
+<div class="page-form">
+  <%= form_for Photo.new, html: {multipart: true} do |f| %>
   <%= f.label :title, 'Photo title:' %>
   <br>
-  <%= f.text_field :title %>
+  <%= f.text_field :title, class: 'form-text-field' %>
   <br>
 
   <%= f.label :image, 'Add new image:', class: 'hidden' %>
@@ -33,10 +38,18 @@
   <br>
   <br>
 
-  <%= f.submit "Upload photo" %>
-<% end %>
-  <br>
+  <%= f.submit "Upload photo", class:"submit-button"  %>
+  <% end %>
+</div>
+<br>
+
+<div class="page-copy">
   <%= link_to 'Edit post', edit_post_path(@post) %>
-  |
+</div>
+
+<div class="page-copy">
   <%= link_to 'Delete post', post_path(@post), method: 'delete' %>
+</div>
+
 <% end %>
+<br>

@@ -1,10 +1,19 @@
-<div class="hike-index-header">
-  <h2>All Hikes</h2>
+<div class="page-header">
+  <h2>All Hikes &#129406;</h2>
 </div>
 
 <% @hikes_without_posts.each do |hike| %>
-  <h3><%= link_to hike.name, hike_path(hike.id) %></h3>
-  <p><%= link_to 'Add post', new_post_path(hike_id: hike.id) %> to this hike</p>
+
+  <div class="hike-index-name-container">
+    <h3><%= link_to hike.name, hike_path(hike.id) %></h3>
+  </div>
+
+  <div class="hike-index-add-post">
+    <p><%= link_to 'Add post', new_post_path(hike_id: hike.id) %> to this hike</p>
+  </div>
+
+  <hr class="gradient-line">
+
 <% end %>
 
 <% @hikes.each do |hike, posts| %>
