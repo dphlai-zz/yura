@@ -18,38 +18,36 @@
 </div>
 
 <% if @current_user.present? && @post.user_id == @current_user.id %>
-<hr class="gradient-line">
+  <div class="page-copy">
+    <%= link_to 'Edit post', edit_post_path(@post) %>
+  </div>
 
-<div class="page-copy">
-  <p>Add new photo to post:</p>
-</div>
+  <div class="page-copy">
+    <%= link_to 'Delete post', post_path(@post), method: 'delete' %>
+  </div>
 
-<div class="page-form">
-  <%= form_for Photo.new, html: {multipart: true} do |f| %>
-  <%= f.label :title, 'Photo title:' %>
-  <br>
-  <%= f.text_field :title, class: 'form-text-field' %>
-  <br>
+  <hr class="gradient-line">
 
-  <%= f.label :image, 'Add new image:', class: 'hidden' %>
-  <br>
-  <%= f.cl_image_upload :image %>
-  <%= hidden_field_tag :post_id, @post.id %>
-  <br>
-  <br>
+  <div class="page-copy">
+    <p>Add new photo to post:</p>
+  </div>
 
-  <%= f.submit "Upload photo", class:"submit-button"  %>
-  <% end %>
-</div>
-<br>
+  <div class="page-form">
+    <%= form_for Photo.new, html: {multipart: true} do |f| %>
+    <%= f.label :title, 'Photo title:' %>
+    <br>
+    <%= f.text_field :title, class: 'form-text-field' %>
+    <br>
 
-<div class="page-copy">
-  <%= link_to 'Edit post', edit_post_path(@post) %>
-</div>
+    <%= f.label :image, 'Add new image:', class: 'hidden' %>
+    <br>
+    <%= f.cl_image_upload :image %>
+    <%= hidden_field_tag :post_id, @post.id %>
+    <br>
+    <br>
 
-<div class="page-copy">
-  <%= link_to 'Delete post', post_path(@post), method: 'delete' %>
-</div>
-
+    <%= f.submit "Upload photo", class:"submit-button"  %>
+    <% end %>
+  </div>
 <% end %>
 <br>
