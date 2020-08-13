@@ -1,11 +1,20 @@
-<h2><%= @post.title %></h2>
-<p>posted by <%= @post.user.name %></p>
+<div class="post-show-title">
+  <h2><%= @post.title %></h2>
+</div>
 
-<% @post.photos.each do |post| %>
+<div class="post-show-posted-by">
+  <p>posted by <%= @post.user.name %></p>
+</div>
+
+<div class="post-show-image">
+  <% @post.photos.each do |post| %>
   <%= cl_image_tag(post.image, :width=>250, :height=>250, :gravity=>"auto", :crop=>"fill", :quality=>90) %>
-<% end %>
+  <% end %>
+</div>
 
-<p><em><%= @post.caption %></em></p>
+<div class="post-show-caption">
+  <p><em><%= @post.caption %></em></p>
+</div>
 
 <% if @current_user.present? && @post.user_id == @current_user.id %>
 <hr>

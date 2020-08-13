@@ -8,7 +8,7 @@
 
 body {
   font-family: 'Quicksand', sans-serif;
-  background-color: rgb(243, 255, 242);
+  background-color: rgb(250, 255, 250);
 }
 
 a {
@@ -32,12 +32,11 @@ h3 a {
 .navigation {
   display: flex;
   flex-flow: row wrap;
-  justify-content: flex-start;
+  justify-content: center;
   list-style: none;
   padding: 0;
   margin: 0;
   background: rgb(0, 64, 21);
-
 }
 
 .navigation a {
@@ -49,6 +48,31 @@ h3 a {
 
 .navigation a:hover {
   background: rgb(0, 122, 56);
+}
+.hike-index-header, .hike-index-name-container,  {
+  display: flex;
+  justify-content: center;
+}
+
+.hike-index-add-post {
+  display: flex;
+  justify-content: center;
+  font-size: 11px;
+}
+
+.hike-index-images-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.gradient-line{
+  margin-top: 25px;
+  display: flex;
+  border: none;
+  height: 1px;
+  background: rgb(0, 64, 21);
+  background: linear-gradient(to right, white, rgb(0, 64, 21), rgb(5, 241, 0), rgb(0, 64, 21), white);
 }
 
 @media all and (max-width: 800px) {
@@ -62,6 +86,7 @@ h3 a {
     flex-flow: column wrap;
     padding: 0;
   }
+
   .navigation a {
     text-align: center;
     padding: 10px;
@@ -75,4 +100,10 @@ h3 a {
 
 .hidden {
   display: none;
+}
+
+.dphlai {
+  display: flex;
+  justify-content: center;
+  font-size: 10px;
 }
