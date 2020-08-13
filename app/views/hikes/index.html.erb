@@ -1,11 +1,24 @@
 <h2>All Hikes</h2>
 
+<div class="hikes-without-posts">
+  <% @hikes_without_posts.each do |hike| %>
+  <div class="child">
+    <h3><%= link_to hike.name, hike_path(hike.id) %></h3>
+  </div>
+  <span class="add-post">
+    <p><%= link_to 'Add post', new_post_path(hike_id: hike.id) %> to this hike</p>
+  </span>
+  <% end %>
+</div>
+
 <% @hikes.each do |hike, posts| %>
   <h3><%= link_to hike.name, hike_path(hike.id) %></h3>
+
   <p><%= link_to 'Add post', new_post_path(hike_id: hike.id) %> to this hike</p>
+
   <ul>
-      <% posts.each do |post| %>
-      <li><%= link_to post.title, post_path(post.id) %></li>
-      <% end %>
+    <% posts.each do |post| %>
+        <%= link_to (cl_image_tag post.photos[0].image, :width=>250, :height=>250, :gravity=>"auto", :crop=>"fill", :quality=>80), post_path(post.id) %>
+    <% end %>
   </ul>
 <% end %>

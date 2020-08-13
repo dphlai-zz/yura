@@ -1,5 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+/* @import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities"; */
+
 body {
-  font-family: Helvetica;
+  font-family: 'Quicksand', sans-serif;
+  background-color: rgb(243, 255, 242);
 }
 
 a {
@@ -11,6 +20,59 @@ h3 a {
   text-decoration: none;
 }
 
-nav a {
-  color: rgb(28, 0, 255)
+.add-post {
+  font-size: 12px;
+}
+
+.header-title {
+  display: flex;
+  justify-content: center;
+}
+
+.navigation {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: rgb(0, 64, 21);
+
+}
+
+.navigation a {
+  text-decoration: none;
+  display: block;
+  padding: 1em;
+  color: white;
+}
+
+.navigation a:hover {
+  background: rgb(0, 122, 56);
+}
+
+@media all and (max-width: 800px) {
+  .navigation {
+    justify-content: space-around;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .navigation {
+    flex-flow: column wrap;
+    padding: 0;
+  }
+  .navigation a {
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid rgba(255, 255, 255,0.3);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .navigation li:last-of-type a {
+    border-bottom: none;
+  }
+}
+
+.hidden {
+  display: none;
 }

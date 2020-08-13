@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 
   def fetch_user
 
-    # Check if user_id in the sesion is the id of a real user in our db. If it is, we will get the user object in @current_user; if not, we will get nil
+    # Check if user_id in the session is the id of a real user in our db. If it is, we will get the user object in @current_user; if not, we will get nil
     if session[:user_id].present?
       @current_user = User.find_by id: session[:user_id]
     end

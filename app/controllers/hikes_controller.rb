@@ -14,6 +14,7 @@ class HikesController < ApplicationController
   end
 
   def index
+    @hikes_without_posts = Hike.left_joins(:posts).where(posts:{id: nil})
     @hikes = Post.all.group_by(&:hike)
   end
 

@@ -54,3 +54,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'pry-rails'
 gem 'pry-byebug'
 gem 'cloudinary'
+gem 'webpacker', '~> 4.0.0'
+# gem 'tailwindcss', '~> 1.0.0'

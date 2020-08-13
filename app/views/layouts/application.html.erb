@@ -11,31 +11,27 @@
   </head>
 
   <body>
+    <div class="header-title">
+      <h1>Yura</h1>
+    </div>
 
-    <h1>Yura</h1>
-      <nav>
-        <% if @current_user.present? %>
-          Hello, <%= @current_user.name %>
-          |
-          <%= link_to 'Logout', login_path, method: 'delete' %>
-          <br>
-          <br>
-          <%= link_to 'Home', root_path %>
-          &#127807;
-          <%= link_to 'Add new hike', new_hike_path %>
-        <% else %>
-          <%= link_to 'Login', login_path %>
-          &#127807;
-          <%= link_to 'Sign up', new_user_path %>
-        <% end %>
-          &#127807;
-          <%= link_to 'View all hikes', hikes_path %>
-      </nav>
+    <ul class="navigation">
+      <% if @current_user.present? %>
+      <span class="hidden"><li>Hello, <%= @current_user.name %></li></span>
+      <li><%= link_to 'Logout', login_path, method: 'delete' %></li>
+      <li><%= link_to 'Home', root_path %></li>
+      <li><%= link_to 'Add new hike', new_hike_path %></li>
+      <% else %>
+      <li><%= link_to 'Login', login_path %></li>
+      <li><%= link_to 'Sign up', new_user_path %></li>
+      <% end %>
+      <li><%= link_to 'View all hikes', hikes_path %></li>
+    </ul>
 
-      <hr>
-      <%= yield %>
-      <hr>
-      &copy; dphlai 2020
+    <hr>
+    <%= yield %>
+    <hr>
+    &copy; dphlai 2020
   </body>
 
 </html>

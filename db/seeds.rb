@@ -52,6 +52,6 @@ ph3 = Photo.create! title: 'Angry Boi', image: 'quack_ude9yu'
 
 puts "Created #{Photo.count} photo(s)"
 
-p1.photos << ph1 << ph2
-p2.photos << ph2 << ph3 << ph1
-p3.photos << ph1
+p1.photos << ph1
+p2.photos << ph2
+p3.photos << ph3
