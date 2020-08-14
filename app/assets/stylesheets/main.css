@@ -20,6 +20,11 @@ h3 a {
   text-decoration: none;
 }
 
+.home-copy {
+  font-size: 24px;
+  text-align: center;
+}
+
 .add-post {
   font-size: 12px;
 }
@@ -162,4 +167,23 @@ h3 a {
   color: black;
   text-align: center;
   font-size: 11px;
+}
+
+.container section {
+  color: #000000;
+  padding: 10px 0;
+  background-size: 100%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-image: url("https://images.unsplash.com/photo-1549305875-a18ca077f147?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2540&q=80");
+}
+.divider {
+    padding:0;
+    margin:0;
+}
+.divider h2 {
+    margin: 10%;
+    text-align:center;
+    font-size:48px;
+    color: #fff;
 }

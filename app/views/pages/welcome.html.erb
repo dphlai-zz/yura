@@ -1,10 +1,16 @@
-<div class="">
-  <% if @current_user.present? %>
-  <h2>Welcome back, <%= @current_user.name %>! &#128075;&#127996;</h2>
-  <% else %>
-  <h2>Hello! Welcome to Yura. &#128075;&#127996;</h2>
-  <% end %>
+<div class="container">
+  <section class="wrapper">
+    <div class="divider">
+      <% if @current_user.present? %>
+      <h2>Welcome back, <%= @current_user.name %>! &#128075;&#127996;</h2>
+      <% else %>
+      <h2>Hello! Welcome to Yura. &#128075;&#127996;</h2>
+      <% end %>
+    </div>
+  </section>
 </div>
 
-<p>Be sure to check out all the latest posts by heading over to "View all hikes".</p>
-<p>If you've discovered an amazing new trail or hike, share it with the world via "Add new hike"!</p>
+<div class="home-copy">
+  <p>Be sure to check out all the latest posts by heading over to "View all hikes".</p>
+  <p>If you've discovered an amazing new trail or hike, share it with the world via "Add new hike"!</p>
+</div>
