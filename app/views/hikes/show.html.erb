@@ -1,16 +1,18 @@
-<div class="hike-overview">
-  <h2><%= @hike.name %></h2>
+<h2><%= @hike.name %></h2>
 
-  <p><%= @hike.description %></p>
+<p><%= @hike.description %></p>
+
+<div class="page-header">
+  <h3>Latest posts</h3>
 </div>
 
-<h3>Latest posts</h3>
-
-<ul>
-  <% @hike.posts.each do |post| %>
-  <li><%= link_to post.title, post_path(post.id) %></li>
+<div class="hike-index-images-container">
+  <% @hike.posts.includes(:photos).each do |post| %>
+    <% post.photos.each do |photo| %>
+      <%= link_to (cl_image_tag photo.image, :width=>150, :height=>150, :gravity=>"auto", :crop=>"fill", :quality=>90), post_path(post.id) %>
+    <% end %>
   <% end %>
-</ul>
+</div>
 
 <% if @current_user.present? && @hike.user_id == @current_user.id %>
   <br>
@@ -18,3 +20,4 @@
   |
   <%= link_to 'Delete hike', hike_path(@hike), method: 'delete' %>
 <% end %>
+<br>
