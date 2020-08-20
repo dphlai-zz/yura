@@ -1,24 +1,20 @@
-# README
+# Yura
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Calling all hiking and nature enthusiasts!
 
-Things you may want to cover:
+Yura is a social media platform designed for you to upload posts and images of your latest hiking adventure.
 
-* Ruby version
+<h2>Link</h2>
 
-* System dependencies
+https://safe-cove-64534.herokuapp.com/
 
-* Configuration
+<h2>Features</h2>
 
-* Database creation
+* Users are able to create a post and link it to a specific hike
 
-* Database initialization
+* Users can manage their posts by editing content or adding additional photos
 
-* How to run the test suite
+* Don't see a hike? Users have the ability to add hikes that do not currently exist in the hike database
 
-* Services (job queues, cache servers, search engines, etc.)
+This project has been built using Ruby on Rails, HTML and CSS.
 
-* Deployment instructions
-
-* ...
