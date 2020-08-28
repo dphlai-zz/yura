@@ -1,24 +1,6 @@
-# README
+# Yura
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Yura is a social media platform targeted at hiking and nature enthusiasts alike!
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+<h2>Link</h2>
+[Link to Yura](https://safe-cove-64534.herokuapp.com/)
