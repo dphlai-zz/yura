@@ -16,4 +16,4 @@ https://safe-cove-64534.herokuapp.com/
 
 * Don't see a hike? Users have the ability to add hikes that do not currently exist in the hike database
 
-This project has been built using Ruby on Rails, HTML and CSS.
+This project has been built using Ruby on Rails, Cloudinary API, HTML and CSS.
